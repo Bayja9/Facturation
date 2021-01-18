@@ -26,13 +26,13 @@ else
         <tbody>
             @foreach (var facture in data.Factures)
             {
-                <tr>
-                    <td>@facture.NumFacture</td>
-                    <td>@facture.EmissionFacture</td>
-                    <td>@facture.ReglementAttendu</td>
-                    <td>@facture.MontantDu</td>
-                    <td>@facture.MontantRegle</td>
-                </tr>
+            <tr>
+                <td>@facture.NumFacture</td>
+                <td>@facture.EmissionFacture</td>
+                <td>@facture.ReglementAttendu</td>
+                <td>@facture.MontantDu</td>
+                <td>@facture.MontantRegle</td>
+            </tr>
             }
         </tbody>
     </table>
@@ -46,12 +46,4 @@ else
         //LesFactures = await Http.GetFromJsonAsync<ClassFacture[]>("Les Factures");
     }
 
-}
-@code {
-    private DashboardDto dashboard;
-
-    protected override async Task OnIniatializedAsync()
-    {
-        dashboard = await Http.GetFromJsonAsync<DashboardDto>("api/dashboard");
-    }
 }
